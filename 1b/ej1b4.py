@@ -66,7 +66,18 @@ import numpy as np
 
 def results(list_numbers):
     # Write here your code
-    pass
+    
+    # Validamos los datos de entrada.
+    for num in list_numbers:
+        if not isinstance(num, int) and not isinstance(num, float):
+            raise("ERROR, al menos uno de los valores de la lista no es numérico.")
+
+    # Mostramos la media y la desviación estandar.
+    media = round(np.mean(list_numbers),2)
+    desviacion = round(np.std(list_numbers),2)
+    print (f"Average: {media}. Standard deviation: {desviacion}")
+    return media,  desviacion
+    
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
