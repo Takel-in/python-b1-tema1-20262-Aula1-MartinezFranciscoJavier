@@ -33,8 +33,18 @@ Exemple:
 
 def invert_text(text_chain:str):
     # Write here your code
-    pass
+
+    # validamos que el tipo de entrada sea string.
+    if not isinstance(text_chain, str):
+        raise ValueError("ERROR, deberías ser una cadena de texto.")
+
+    # invertimos 
+    result = ""
+    for c in text_chain:
+        result = c + result
+
+    return result
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(invert_text("Hello world!"))
+print(invert_text("Hello world!"))

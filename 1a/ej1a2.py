@@ -43,7 +43,6 @@ Exemple:
 
 def sum_odd_numbers(list_numbers):
     # Write here your code
-    pass
 
     # Validamos la list_numbers.
     if not isinstance(list_numbers, list):
