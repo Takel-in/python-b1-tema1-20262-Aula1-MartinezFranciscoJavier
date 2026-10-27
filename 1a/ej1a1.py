@@ -41,8 +41,30 @@ Exemple:
 
 def fibonacci(fibonacci_number):
     # Write here your code
-    pass
+
+    # Realizamos validaciones
+    if not isinstance(fibonacci_number, int):
+        raise ValueError("El valor debe ser numérico")
+         
+    if fibonacci_number < 0:
+         raise ValueError("El valor no puede ser menor a 0")
+
+    # Las condicciones de fin de recusividad. 
+    if fibonacci_number == 0:
+        return fibonacci_number
+
+    if fibonacci_number == 1:
+       return fibonacci_number
+
+    # Aplicamos la función recursiva.
+    fibonacci_number = fibonacci(fibonacci_number - 1) + fibonacci(fibonacci_number - 2)
+    
+    return fibonacci_number
+
+
+
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(fibonacci(10))
+print(fibonacci(7))
