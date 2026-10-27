@@ -67,8 +67,15 @@ import math
 
 def calculate_angle(angle):
     # Write here your code
-    pass
+  
+    # Validamos los datos de entrada
+    if not isinstance(angle, int):
+        raise ValueError("ERROR. introduce un valor numérico")
+
+    # Convertimos los angulos en gradios radianes y luego calculamos el seno.
+    # Por último round redondea a 2 decimales. 
+    return  round(math.sin(math.radians(angle)),2)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(calculate_angle(270))
+print(calculate_angle(270))
