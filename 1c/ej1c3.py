@@ -39,10 +39,25 @@ Exemple:
 
 def find_max(lst):
     # Write here your code
-    pass
+    
+    # Validamos la entrada
+    if not isinstance(lst, list):
+        raise ValueError("ERROR. Se esperaba una lista.")
 
+    # Introducimos la condición de salida que será el ultimo elemento de la lista.
+    if len(lst) == 1:
+        return lst[0]
+
+    # Miramos si el elemento actual es mayor que el que miremos del resto de la lista.
+    MaxAct = find_max(lst[1:])
+    if lst[0] > MaxAct :
+        return lst[0]
+
+    # Si el actual no es mas grande devolvemos el que teníamos.
+    return MaxAct
+    
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# numbers_list = [1, 5, 2, 7, 3]
-# print(find_max(numbers_list))
+numbers_list = [1, 5, 2, 7, 3]
+print(find_max(numbers_list))
