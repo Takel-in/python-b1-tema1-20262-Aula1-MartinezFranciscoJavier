@@ -42,13 +42,26 @@ Exemple:
 
 def is_palindrome(word):
     # Write here your code
-    pass
+    
+    # Validamos la entrad
+    if not isinstance(word, str):
+        raise ValueError("ERROR. Se esperaba un texto")
 
+    # Condición de salida de la recusividad.
+    if len(word) <= 1:
+        return True
+
+    #Compruebo y la primera y la última letra es igual. Si son iguales miro el resto del texto.
+    #Si no son iguales no tiene sentido continuar y ya indico que es falso.
+    if (word[0] == word[len(word)-1]) and is_palindrome(word[1:len(word)- 1]):
+        return True
+
+    return False
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# word = "level"
-# print(f"Is '{word}' word palindrome?", is_palindrome(word))
+#word = "level"
+#print(f"Is '{word}' word palindrome?", is_palindrome(word))
 #
-# word = "juan"
-# print(f"Is '{word}' word palindrome?", is_palindrome(word))
+#word = "juan"
+#print(f"Is '{word}' word palindrome?", is_palindrome(word))
