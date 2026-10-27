@@ -45,6 +45,24 @@ def sum_odd_numbers(list_numbers):
     # Write here your code
     pass
 
+    # Validamos la list_numbers.
+    if not isinstance(list_numbers, list):
+        raise ValueError("Se esperaba recibir una lista.")
+
+    # Si en la lista algún valor no es numérico entero o es menor que 0 damos error.
+    # Si es un numero impar, sumamos su valor.
+    suma = 0
+    for numero in list_numbers:
+        if not isinstance(numero, int) or numero < 0:
+            raise ValueError("Al menos uno de los valores recibios no es numerico o es menor que 0.")
+
+        if numero % 2 == 1:
+            suma += numero
+
+    return suma
+        
+
+
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 # print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
