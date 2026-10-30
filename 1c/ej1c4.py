@@ -47,7 +47,7 @@ def is_palindrome(word):
     if not isinstance(word, str):
         raise ValueError("ERROR. Se esperaba un texto")
 
-    # Condición de salida de la recusividad.
+    # Condición de salida de la recusividad. Ponemos el < porque si la cadena es vacia también se considera palindromo.
     if len(word) <= 1:
         return True
 

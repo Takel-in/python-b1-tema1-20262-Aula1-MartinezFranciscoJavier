@@ -43,7 +43,13 @@ def invert_list(lst):
         raise ("ERROR. Se esperaba recibir una lista.")
 
     #Devolvemos la lista de manera invertida.
-    return lst[::-1]
+    #return lst[::-1]
+
+    # Indicamos la condición de salidad de la recursión.
+    if (len(lst) == 0):
+        return []
+    else:
+        return [lst[-1]] + invert_list(lst[:-1])
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
